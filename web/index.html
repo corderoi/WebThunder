@@ -18,40 +18,85 @@
     <script src="bower_components/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 
-    <style>
-        [v-cloak] {
-            display: none;
-        }
-    </style>
+    <!-- Style -->
+    <link rel="stylesheet" href="styles/app.css" />
 </head>
-<body>
-    <h1>Web Thunder</h1>
-    <section class="view" v-view v-cloak>
-        <form name="codeEditor">
-            <textarea class="form-control" rows="10" cols="80" v-model="code"></textarea>
+<body class="sunny">
+    <div class="view">
+        <h2 class="user">
+            <span class="glyphicon glyphicon-star"></span>
+            Bryant Cabrera
+        </h2>
+        <h1>Web Thunder</h1>
+        <section v-view v-cloak>
+            <pre class="greeting">{{ greeting }}</pre>
 
-            <button class="btn btn-default" type="button" @click="clear">
-                Clear
-            </button>
-            <button class="btn btn-primary" type="button" @click="run">
-                Run
-            </button>
-        </form>
+            <div class="buttons">
+                <button type="button" class="btn btn-default"
+                    @click="toggleCustomize">
+                    <template v-if="!customize">
+                        Customize
+                    </template>
+                    <template v-else>
+                        Hide Customize Controls
+                    </template>
+                </button>
+            </div>
 
-        <div v-if="output">
-            <h2>Output:</h2>
-            <pre>{{ output }}</pre>
-        </div>
+            <form name="customize" class="customize"
+                v-if="customize">
+                <h3>Customize</h3>
+                <label for="customSelect">
+                    Select Theme
+                </label>
+                <select id="customSelect" class="form-control"
+                        v-model="theme"
+                        @change="customChange">
+                    <option disabled value="">Select Theme</option>
+                    <option value="midnight">Midnight</option>
+                    <option value="spring">Spring</option>
+                    <option value="fiesta">Fiesta</option>
+                    <option value="sunny">Sunny</option>
+                </select>
+            </form>
 
-        <div v-if="error">
-            <h2>Errors Occurred:</h2>
-            <span style="color: red;">
+            <form name="editor" class="editor">
+                <fieldset>
+                    <textarea class="form-control" rows="10" cols="80" v-model="code"></textarea>
+                </fieldset>
+
+                <fieldset class="rightButtons">
+                    <button class="btn btn-default" type="button" @click="clear">
+                        Clear
+                    </button>
+                    <button class="btn btn-primary" type="button" @click="run">
+                        Run
+                    </button>
+                </fieldset>
+            </form>
+
+            <!-- Output -->
+            <div class="output">
+                <h2>Output</h2>
+                <div v-if="output">
+                    <pre>{{ output }}</pre>
+                </div>
+                <div v-else>
+                    <i>No output. Try typing code in the above box and clicking "Run".</i>
+                </div>
+            </div>
+
+            <!-- Error -->
+            <div class="errorOutput" v-if="error">
+                <h2>Errors Occurred</h2>
+                <span style="color: red;">
                 {{ error }}
             </span>
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 
     <!-- Scripts -->
-    <script src="app.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>

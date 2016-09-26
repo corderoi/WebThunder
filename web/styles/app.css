@@ -1,0 +1,76 @@
+/*
+ * app.css
+ * WebThunder
+ *
+ * Created by Ian Cordero on 25 Sep 2016.
+ * Copyright (c) 2016 Ian Cordero. All rights reserved.
+ */
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; }
+  body.midnight {
+    background-color: midnightblue; }
+  body.spring {
+    background-color: chartreuse; }
+  body.fiesta {
+    background-color: #d43f3a; }
+  body.sunny {
+    background-color: gold; }
+  body .view {
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    margin: 0 2rem;
+    padding: 2rem;
+    height: 100%;
+    min-height: 100vh;
+    width: calc(100% - 4rem); }
+    body .view h1 {
+      font-size: 2.5rem; }
+    body .view h2 {
+      font-size: 2.1rem;
+      color: slategray;
+      letter-spacing: 1.25px; }
+    body .view .user {
+      float: right; }
+    body .view h3 {
+      font-size: 1.75rem;
+      color: darkslategray;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.7; }
+    body .view pre.greeting {
+      margin: 1rem; }
+    body .view .buttons {
+      margin-bottom: 1rem; }
+    body .view form.customize {
+      border: 1px solid darkslategray;
+      border-radius: 2px;
+      padding: 1rem 1.5rem;
+      margin: 0.75rem 1.25rem; }
+      body .view form.customize h3 {
+        margin-top: 0.25rem; }
+      body .view form.customize label {
+        font-size: 1.5rem;
+        font-weight: 300; }
+    body .view form.editor textarea {
+      font-family: Consolas, serif;
+      letter-spacing: 1px;
+      color: snow;
+      background-color: #333333; }
+    body .view form.editor .rightButtons {
+      padding: 1rem;
+      text-align: right; }
+    body .view .output {
+      font-size: 1.5rem; }
+      body .view .output i {
+        opacity: 0.7;
+        font-style: normal; }
+    body .view .errorOutput {
+      font-size: 1.5rem; }
+  body [v-cloak] {
+    display: none; }
+
+/*# sourceMappingURL=app.css.map */
