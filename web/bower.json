@@ -1,0 +1,24 @@
+{
+  "name": "webThunder",
+  "authors": [
+    "Ian P. Cordero <ianpcordero@gmail.com>"
+  ],
+  "description": "",
+  "main": "app.js",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "vue": "^1.0.27",
+    "underscore": "^1.8.3",
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,0 +1,57 @@
+<!-- 
+ index.html
+ WebThunder
+
+ Created by Ian Cordero on 25 Sep 2016.
+ Copyright (c) 2016 Ian Cordero. All rights reserved.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Thunder</title>
+
+    <!-- Libraries -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Thunder</h1>
+    <section class="view" v-view v-cloak>
+        <form name="codeEditor">
+            <textarea class="form-control" rows="10" cols="80" v-model="code"></textarea>
+
+            <button class="btn btn-default" type="button" @click="clear">
+                Clear
+            </button>
+            <button class="btn btn-primary" type="button" @click="run">
+                Run
+            </button>
+        </form>
+
+        <div v-if="output">
+            <h2>Output:</h2>
+            <pre>{{ output }}</pre>
+        </div>
+
+        <div v-if="error">
+            <h2>Errors Occurred:</h2>
+            <span style="color: red;">
+                {{ error }}
+            </span>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

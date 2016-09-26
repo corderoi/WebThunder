@@ -1,0 +1,29 @@
+{
+  "name": "web-thunder",
+  "version": "0.1.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Web",
+    "Thunder",
+    "IDE",
+    "online",
+    "JavaScript",
+    "node",
+    "nodeJS",
+    "npm",
+    "ES6",
+    "ES2015",
+    "EMCAScript",
+    "Ian",
+    "Cordero"
+  ],
+  "author": "Ian Cordero <ianpcordero@live.com> (https://github.com/corderoi)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
